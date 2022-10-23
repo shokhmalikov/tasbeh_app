@@ -7,12 +7,14 @@ class CounterProvider extends ChangeNotifier {
   int _count3 = 0;
   late int _totalcount = 0;
   late int _totalcount1 = 0;
+  late int _tahlilcount = 0;
   int get count => _count;
   int get count1 => _count1;
   int get count2 => _count2;
   int get count3 => _count3;
   int get total => _totalcount;
   int get total1 => _totalcount1;
+  int get tahlil => _tahlilcount;
   String zikr = "𝐁𝐢𝐬𝐦𝐢𝐥𝐥𝐚𝐡 بسملة";
   String zikr1 = "𝐁𝐢𝐬𝐦𝐢𝐥𝐥𝐚𝐡 بسملة";
 
@@ -63,9 +65,12 @@ class CounterProvider extends ChangeNotifier {
     if (count3 < 10) {
       zikr1 = " La ilaha illallah";
     } else if (count3 == 10) {
-      zikr1 = " La ilaha illallah\nMuhammadur rasulullah";  
+      zikr1 = "La ilaha illallah\nMuhammadur rasulullah";  
        _totalcount1 = _totalcount1+1;
-    } else {
+    }else if (total1 == total1 + 7000) {
+       _count3 = 1;
+      zikr1 = "$_tahlilcount tahlil bo'ldi.";  
+    }  else {
       _count3 = 1;
       zikr1 = "La ilaha illallah";
     }
