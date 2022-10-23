@@ -1,27 +1,25 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/src/foundation/key.dart';
+import 'package:flutter/src/widgets/framework.dart';
 import 'package:my_tasbeh/provider/counter_provider.dart';
 import 'package:provider/provider.dart';
 
-class Tasfile2 extends StatefulWidget {
-  static const path = 'tasfile2';
-  const Tasfile2({Key? key}) : super(key: key);
+class TasFile3 extends StatelessWidget {
+  static const path = '/tasbeh3';
+  TasFile3({Key? key}) : super(key: key);
 
-  @override
-  State<Tasfile2> createState() => _Tasfile2State();
-}
-
-class _Tasfile2State extends State<Tasfile2> {
-  var tem = Brightness.light;
+ var tem = Brightness.light;
   int s1 = 0;
   var icon1 = Icons.wb_sunny;
   Color rang1 = Colors.white;
   Color rang2 = Colors.lightBlue;
   Color rang3 = Colors.green;
   Color rang4 = Colors.black;
+  
   @override
   Widget build(BuildContext context) {
     final counter = Provider.of<CounterProvider>(context);
-    var count3 = counter.count3;
+    var count = counter.count3;
     var totalcount1 = counter.total1;
     var width = MediaQuery.of(context).size.width;
     var height = MediaQuery.of(context).size.height;
@@ -39,9 +37,7 @@ return MaterialApp(
         ),
         floatingActionButton: FloatingActionButton(
           onPressed: () {
-            setState(() {
               temOzgartir();
-            });
           },
           child: Icon(
             icon1,
@@ -76,7 +72,7 @@ return MaterialApp(
                   ),
                   const SizedBox(height: 20,),
                   Text(
-                "$count3",
+                "$count",
                 style: TextStyle(
                   fontSize: 45.0,
                   color: rang1,
@@ -106,7 +102,7 @@ return MaterialApp(
                           shape: const RoundedRectangleBorder(
                               borderRadius: BorderRadius.all(Radius.circular(30))),
                         ),
-                        onPressed: () => counter.increment100(),
+                        onPressed: () => counter.increment10(),
                         child: Icon(
                           Icons.add,
                           size: 60,
@@ -124,7 +120,7 @@ return MaterialApp(
                           shape: const RoundedRectangleBorder(
                               borderRadius: BorderRadius.all(Radius.circular(16))),
                         ),
-                        onPressed: () => counter.refresh1(),
+                        onPressed: () => counter.refresh2(),
                         child: Icon(
                           Icons.refresh,
                           size: 30,
@@ -170,7 +166,6 @@ return MaterialApp(
       ),
       );
   }
-
   void temOzgartir() {
     if (s1 == 1) {
       tem = Brightness.light;
