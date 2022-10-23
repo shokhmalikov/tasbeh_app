@@ -4,7 +4,7 @@ import 'package:provider/provider.dart';
 
 // ignore: must_be_immutable
 class TasFile extends StatefulWidget {
-  static const path = 'tasfile';
+  static const path = 'tasbeh3';
 
   const TasFile({Key? key}) : super(key: key);
 
@@ -15,6 +15,7 @@ class TasFile extends StatefulWidget {
 }
 
 class TasFileState extends State<TasFile> {
+  int? tap = 33;
   var tem = Brightness.light;
   int s1 = 0;
   var icon1 = Icons.wb_sunny;
@@ -22,10 +23,29 @@ class TasFileState extends State<TasFile> {
   Color rang2 = Colors.lightBlue;
   Color rang3 = Colors.green;
   Color rang4 = Colors.black;
+  
+    void Controllor() {
+    tap = tap!;
+    if (tap == 99) {
+      tap = 33;
+    } else if (tap == 33) {
+      tap = 99;
+    }
+    setState(() {});
+  }
+
   @override
   Widget build(BuildContext context) {
     final counter = Provider.of<CounterProvider>(context);
     var count = counter.count;
+    var count2 = counter.count2;
+    int sanoq(){
+     if(tap == 33){
+        return count;
+      }else{
+        return count2;
+      }
+  }
     var width = MediaQuery.of(context).size.width;
     var height = MediaQuery.of(context).size.height;
     return MaterialApp(
@@ -78,8 +98,7 @@ class TasFileState extends State<TasFile> {
                     ),
                   ),
                   const SizedBox(height: 20,),
-                  Text(
-                "${count}",
+                  Text( '${sanoq()}',
                 style: TextStyle(
                   fontSize: 45.0,
                   color: rang1,
@@ -95,15 +114,23 @@ class TasFileState extends State<TasFile> {
                   OutlinedButton(
                         style: OutlinedButton.styleFrom(
                           primary: Colors.black,
-                          backgroundColor: rang2,
+                          backgroundColor: rang3,
                           shape: const RoundedRectangleBorder(
                               borderRadius: BorderRadius.all(Radius.circular(30))),
                         ),
-                        onPressed: () => counter.increment99(),
+                        onPressed: (){
+                          if(tap == 33){
+                            counter.count;
+                            counter.increment99();
+                          }else{
+                            counter.count1;
+                            counter.increment33();
+                          }
+                        },
                         child: Icon(
                           Icons.add,
                           size: 60,
-                          color: rang4,
+                          color: rang1,
                         ),
                       ),
                       const SizedBox(height: 50,),
@@ -113,7 +140,7 @@ class TasFileState extends State<TasFile> {
                       OutlinedButton(
                         style: OutlinedButton.styleFrom(
                           primary: Colors.black,
-                          backgroundColor: rang4,
+                          backgroundColor: rang3,
                           shape: const RoundedRectangleBorder(
                               borderRadius: BorderRadius.all(Radius.circular(16))),
                         ),
@@ -127,12 +154,12 @@ class TasFileState extends State<TasFile> {
                        OutlinedButton(
                         style: OutlinedButton.styleFrom(
                           primary: Colors.black,
-                          backgroundColor: rang4,
+                          backgroundColor: rang3,
                           shape: const RoundedRectangleBorder(
                               borderRadius: BorderRadius.all(Radius.circular(16))),
                         ),
-                        onPressed: (){},
-                        child: Text('33',
+                        onPressed: ()=> Controllor(),
+                        child: Text('$tap',
                         style: TextStyle(
                           color: rang1,
                           fontSize: 33,
@@ -142,7 +169,7 @@ class TasFileState extends State<TasFile> {
                       OutlinedButton(
                         style: OutlinedButton.styleFrom(
                           primary: Colors.black,
-                          backgroundColor: rang4,
+                          backgroundColor: rang3,
                           shape: const RoundedRectangleBorder(
                               borderRadius: BorderRadius.all(Radius.circular(16))),
                         ),

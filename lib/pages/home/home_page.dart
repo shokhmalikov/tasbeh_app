@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:my_tasbeh/pages/tasbeh/tasbeh10.dart';
 import 'package:my_tasbeh/pages/tasbeh/tasbeh33.dart';
 import 'package:my_tasbeh/pages/tasbeh/tasbeh100.dart';
 
@@ -65,6 +66,26 @@ class _HomePageState extends State<HomePage> {
                           borderRadius: BorderRadius.circular(8)),
                     ),
                     child: const Text('Tasbeh 100 tali',
+                        style: TextStyle(
+                            color: Colors.white,
+                            fontSize: 20,
+                            fontWeight: FontWeight.bold)),
+                  ),
+                ),
+                const SizedBox(
+                  width: 10,
+                ),
+                Expanded(
+                  child: OutlinedButton(
+                    onPressed: () {
+                      Navigator.pushNamed(context, TasFile3.path);
+                    },
+                    style: OutlinedButton.styleFrom(
+                      backgroundColor: Colors.green.shade500,
+                      shape: RoundedRectangleBorder(
+                          borderRadius: BorderRadius.circular(8)),
+                    ),
+                    child: const Text('Tasbeh 10 tali',
                         style: TextStyle(
                             color: Colors.white,
                             fontSize: 20,
