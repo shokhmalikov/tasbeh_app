@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:hive/hive.dart';
 import 'package:hive_flutter/hive_flutter.dart';
 import 'package:my_tasbeh/pages/home/home_page.dart';
 import 'package:my_tasbeh/pages/tasbeh/tasbeh10.dart';
@@ -25,9 +24,9 @@ class MyApp extends StatelessWidget {
         debugShowCheckedModeBanner: false,
         routes: {
           HomePage.path: (context) => const HomePage(),
-          TasFile.path: (context) => const TasFile(),
+          TasFile.path: (context) => TasFile(),
           Tasfile2.path: (context) => const Tasfile2(),
-          TasFile3.path:(context) => TasFile3(),
+          TasFile3.path: (context) => const TasFile3(),
         },
         initialRoute: HomePage.path,
       ),
