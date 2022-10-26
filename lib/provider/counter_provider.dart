@@ -23,7 +23,10 @@ class CounterProvider extends ChangeNotifier {
   ];
   String zikr = "𝐁𝐢𝐬𝐦𝐢𝐥𝐥𝐚𝐡 بسملة";
   String zikr1 = "𝐁𝐢𝐬𝐦𝐢𝐥𝐥𝐚𝐡 بسملة";
-
+  void change(){
+        is33 = !is33; 
+        notifyListeners();
+  }
   void controllor() {
     _tap = tap;
     if (tap == 99) {
@@ -38,26 +41,26 @@ class CounterProvider extends ChangeNotifier {
     ++_count;
     zikr = zikrlist[(_count % (is33 ? 33 : 99) == 0
             ? (_count - 1) ~/ (is33 ? 33 : 99)
-            : _count ~/ (is33 ? 99 : 33)) %
+            : _count ~/ (is33 ? 33 : 99)) %
         zikrlist.length];
 
     notifyListeners();
   }
 
-  void increment99() {
-    ++_count;
-    if (count <= 33) {
-      zikr = "𝐒𝐮𝐛𝐡𝐚𝐧'𝐀𝐥𝐥𝐚𝐡 سبحان الله";
-    } else if (count <= 66) {
-      zikr = "𝐀𝐥𝐡𝐚𝐦𝐝𝐮𝐥𝐢𝐥𝐥𝐚𝐡 الحمد لله";
-    } else if (count <= 99) {
-      zikr = "𝐀𝐥𝐥𝐚𝐡 𝐡𝐮 𝐚𝐤𝐛𝐚𝐫 الله أكبر";
-    } else {
-      _count = 0;
-      zikr = "𝐁𝐢𝐬𝐦𝐢𝐥𝐥𝐚𝐡 بسملة";
-    }
-    notifyListeners();
-  }
+  // void increment99() {
+  //   ++_count;
+  //   if (count <= 33) {
+  //     zikr = "𝐒𝐮𝐛𝐡𝐚𝐧'𝐀𝐥𝐥𝐚𝐡 سبحان الله";
+  //   } else if (count <= 66) {
+  //     zikr = "𝐀𝐥𝐡𝐚𝐦𝐝𝐮𝐥𝐢𝐥𝐥𝐚𝐡 الحمد لله";
+  //   } else if (count <= 99) {
+  //     zikr = "𝐀𝐥𝐥𝐚𝐡 𝐡𝐮 𝐚𝐤𝐛𝐚𝐫 الله أكبر";
+  //   } else {
+  //     _count = 0;
+  //     zikr = "𝐁𝐢𝐬𝐦𝐢𝐥𝐥𝐚𝐡 بسملة";
+  //   }
+  //   notifyListeners();
+  // }
 
   void increment10() {
     ++_count3;
@@ -94,6 +97,7 @@ class CounterProvider extends ChangeNotifier {
     if (count != 0) {
       _count = 0;
       zikr = "𝐁𝐢𝐬𝐦𝐢𝐥𝐥𝐚𝐡 بسملة";
+      notifyListeners();
     }
     notifyListeners();
   }

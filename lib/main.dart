@@ -9,7 +9,7 @@ import 'package:provider/provider.dart';
 
 Future<void> main() async {
   await Hive.initFlutter();
-  await Hive.openBox('tasbeh');
+  Hive.openBox('my_tasbeh_counter');
   return runApp(const MyApp());
 }
 
