@@ -49,7 +49,7 @@ class TasFile extends StatelessWidget {
                   height: 20,
                 ),
                 Text(
-                  '${count == 0 ? 0 : count % (is33 ? 33:99) == 0 ? (is33 ? 33:99) : count % (is33 ? 33:99)}',
+                  '${count == 0 ? 0 : count % (is33 ? 33 : 99) == 0 ? (is33 ? 33 : 99) : count % (is33 ? 33 : 99)}',
                   style: const TextStyle(
                     fontSize: 45.0,
                     color: Colors.white,
@@ -69,11 +69,10 @@ class TasFile extends StatelessWidget {
                         borderRadius: BorderRadius.all(Radius.circular(30))),
                   ),
                   onPressed: () {
-                    // if (tap == 33) {
-                      counter.increment33();
-                    // } else {
-                    //   counter.increment99();
-                    // }
+                    // final box = Hive.box('my_tasbeh_counter');
+                    //int count = box.get('tasbeh33tali');
+                    counter.increment33();
+                    //box.put('tasbeh33tali', count);
                   },
                   child: const Icon(
                     Icons.add,
@@ -108,8 +107,9 @@ class TasFile extends StatelessWidget {
                               borderRadius:
                                   BorderRadius.all(Radius.circular(16))),
                         ),
-                        onPressed: (){ counter.controllor();
-                        counter.is33 = !counter.is33; 
+                        onPressed: () {
+                          counter.change();
+                          counter.controllor();
                         },
                         child: Text(
                           '$tap',
