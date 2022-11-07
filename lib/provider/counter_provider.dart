@@ -4,29 +4,42 @@ class CounterProvider extends ChangeNotifier {
   int _count = 0;
   int _count1 = 0;
   int _count3 = 0;
+  int _count4 = 0;
+  int _listlength = 0;
   int _tap = 33;
   bool is33 = true;
   late int _totalcount = 0;
   late int _totalcount1 = 0;
+  late int _totalcount2 = 0;
   late int _tahlilcount = 0;
   int get count => _count;
   int get count1 => _count1;
   int get count3 => _count3;
+  int get count4 => _count4;
   int get tap => _tap;
   int get total => _totalcount;
   int get total1 => _totalcount1;
+  int get total2 => _totalcount2;
   int get tahlil => _tahlilcount;
   List<String> zikrlist = [
     "𝐒𝐮𝐛𝐡𝐚𝐧'𝐀𝐥𝐥𝐚𝐡 سبحان الله",
     "𝐀𝐥𝐡𝐚𝐦𝐝𝐮𝐥𝐢𝐥𝐥𝐚𝐡 الحمد لله",
     "𝐀𝐥𝐥𝐚𝐡 𝐡𝐮 𝐚𝐤𝐛𝐚𝐫 الله أكبر",
   ];
+  List<String> zikrlar = [
+    "La ilaha illallah",
+    "Ashhadu alla ilaha illallah",
+    "La hawla quvvata illa billah",
+    "Subhanallohi va bihamdihi",
+    "Subhan Allahil Azim",
+  ];
   String zikr = "𝐁𝐢𝐬𝐦𝐢𝐥𝐥𝐚𝐡 بسملة";
   String zikr1 = "𝐁𝐢𝐬𝐦𝐢𝐥𝐥𝐚𝐡 بسملة";
-  void change(){
-        is33 = !is33; 
-        notifyListeners();
+  void change() {
+    is33 = !is33;
+    notifyListeners();
   }
+
   void controllor() {
     _tap = tap;
     if (tap == 99) {
@@ -46,21 +59,6 @@ class CounterProvider extends ChangeNotifier {
 
     notifyListeners();
   }
-
-  // void increment99() {
-  //   ++_count;
-  //   if (count <= 33) {
-  //     zikr = "𝐒𝐮𝐛𝐡𝐚𝐧'𝐀𝐥𝐥𝐚𝐡 سبحان الله";
-  //   } else if (count <= 66) {
-  //     zikr = "𝐀𝐥𝐡𝐚𝐦𝐝𝐮𝐥𝐢𝐥𝐥𝐚𝐡 الحمد لله";
-  //   } else if (count <= 99) {
-  //     zikr = "𝐀𝐥𝐥𝐚𝐡 𝐡𝐮 𝐚𝐤𝐛𝐚𝐫 الله أكبر";
-  //   } else {
-  //     _count = 0;
-  //     zikr = "𝐁𝐢𝐬𝐦𝐢𝐥𝐥𝐚𝐡 بسملة";
-  //   }
-  //   notifyListeners();
-  // }
 
   void increment10() {
     ++_count3;
@@ -93,6 +91,19 @@ class CounterProvider extends ChangeNotifier {
     notifyListeners();
   }
 
+  void incrementzikr100() {
+    ++_count4;
+    if (count4 <= 100) {
+      zikr1 = zikrlar[_listlength].toString();
+    } else {
+      zikr1 = "𝐁𝐢𝐬𝐦𝐢𝐥𝐥𝐚𝐡 بسملة";
+      _count4 = 0;
+      ++_listlength;
+      _totalcount2 = _totalcount2 + 100;
+    }
+    notifyListeners();
+  }
+
   void refresh() {
     if (count != 0) {
       _count = 0;
@@ -116,6 +127,15 @@ class CounterProvider extends ChangeNotifier {
     if (count3 != 0) {
       _count3 = 0;
       _totalcount1 = 0;
+      zikr1 = "𝐁𝐢𝐬𝐦𝐢𝐥𝐥𝐚𝐡 بسملة";
+    }
+    notifyListeners();
+  }
+
+  void refresh3() {
+    if (count4 != 0) {
+      _count4 = 0;
+      _totalcount2 = 0;
       zikr1 = "𝐁𝐢𝐬𝐦𝐢𝐥𝐥𝐚𝐡 بسملة";
     }
     notifyListeners();

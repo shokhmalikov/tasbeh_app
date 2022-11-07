@@ -3,6 +3,7 @@ import 'package:hive_flutter/hive_flutter.dart';
 import 'package:my_tasbeh/pages/home/home_page.dart';
 import 'package:my_tasbeh/pages/tasbeh/tasbeh10.dart';
 import 'package:my_tasbeh/pages/tasbeh/tasbeh33.dart';
+import 'package:my_tasbeh/pages/tasbeh/zikrlar100.dart';
 import 'package:my_tasbeh/provider/counter_provider.dart';
 import 'package:my_tasbeh/pages/tasbeh/tasbeh100.dart';
 import 'package:provider/provider.dart';
@@ -27,6 +28,7 @@ class MyApp extends StatelessWidget {
           TasFile.path: (context) => TasFile(),
           Tasfile2.path: (context) => const Tasfile2(),
           TasFile3.path: (context) => const TasFile3(),
+          Tasfile4.path: (context) => const Tasfile4(),
         },
         initialRoute: HomePage.path,
       ),

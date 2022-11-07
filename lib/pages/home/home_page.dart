@@ -1,7 +1,9 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:my_tasbeh/pages/tasbeh/tasbeh10.dart';
 import 'package:my_tasbeh/pages/tasbeh/tasbeh33.dart';
 import 'package:my_tasbeh/pages/tasbeh/tasbeh100.dart';
+import 'package:my_tasbeh/pages/tasbeh/zikrlar100.dart';
 
 class HomePage extends StatefulWidget {
   static const path = 'home';
@@ -16,86 +18,158 @@ class _HomePageState extends State<HomePage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        backgroundColor: Colors.green.shade500,
-        title: const Text('Home'),
+        backgroundColor: Colors.green,
+        title: const Text('Tasbeh'),
         centerTitle: true,
       ),
-      body: Column(
-        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-        children: [
-          const SizedBox(
-            height: 20,
-          ),
-          const Center(
-            child: Text('Home'),
-          ),
-          //const SizedBox(height: 500,),
-          Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 10.0),
-            child: Row(
-              //crossAxisAlignment: CrossAxisAlignment.end,
+      body: Padding(
+        padding: const EdgeInsets.all(20),
+        child: Column(
+          children: [
+            Row(
               children: [
                 Expanded(
-                  child: OutlinedButton(
-                    onPressed: () {
-                      Navigator.pushNamed(context, TasFile.path);
-                    },
-                    style: OutlinedButton.styleFrom(
-                      backgroundColor: Colors.green.shade500,
-                      shape: RoundedRectangleBorder(
-                          borderRadius: BorderRadius.circular(10)),
-                    ),
-                    child: const Text('Tasbeh 33 tali',
-                        style: TextStyle(
-                            color: Colors.white,
-                            fontSize: 20,
-                            fontWeight: FontWeight.bold)),
-                  ),
+                  child: Container(
+                      height: 250,
+                      decoration: BoxDecoration(
+                        color: Colors.green,
+                        borderRadius: BorderRadius.circular(22),
+                      ),
+                      child: CupertinoButton(
+                          onPressed: () {
+                            Navigator.pushNamed(context, TasFile.path);
+                          },
+                          child: Column(
+                            children: [
+                              Image.asset('assets/tasbeh_hand.png'),
+                              const SizedBox(
+                                height: 22,
+                              ),
+                              const Text(
+                                'Tasbeh 33talik',
+                                style: TextStyle(
+                                    fontSize: 16,
+                                    fontWeight: FontWeight.w700,
+                                    color: Colors.white),
+                              ),
+                            ],
+                          ))),
                 ),
                 const SizedBox(
-                  width: 10,
+                  width: 20,
                 ),
                 Expanded(
-                  child: OutlinedButton(
-                    onPressed: () {
-                      Navigator.pushNamed(context, Tasfile2.path);
-                    },
-                    style: OutlinedButton.styleFrom(
-                      backgroundColor: Colors.green.shade500,
-                      shape: RoundedRectangleBorder(
-                          borderRadius: BorderRadius.circular(8)),
-                    ),
-                    child: const Text('Tasbeh 100 tali',
-                        style: TextStyle(
-                            color: Colors.white,
-                            fontSize: 20,
-                            fontWeight: FontWeight.bold)),
-                  ),
-                ),
-                const SizedBox(
-                  width: 10,
-                ),
-                Expanded(
-                  child: OutlinedButton(
-                    onPressed: () {
-                      Navigator.pushNamed(context, TasFile3.path);
-                    },
-                    style: OutlinedButton.styleFrom(
-                      backgroundColor: Colors.green.shade500,
-                      shape: RoundedRectangleBorder(
-                          borderRadius: BorderRadius.circular(8)),
-                    ),
-                    child: const Text('Tasbeh 10 tali',
-                        style: TextStyle(
-                            color: Colors.white,
-                            fontSize: 20,
-                            fontWeight: FontWeight.bold)),
-                  ),
+                  child: Container(
+                      height: 250,
+                      decoration: BoxDecoration(
+                        color: Colors.green,
+                        borderRadius: BorderRadius.circular(22),
+                      ),
+                      child: CupertinoButton(
+                          onPressed: () {
+                            Navigator.pushNamed(context, TasFile3.path);
+                          },
+                          child: Column(
+                            children: [
+                              Image.asset('assets/tasbeh_hand.png'),
+                              const SizedBox(
+                                height: 22,
+                              ),
+                              const Text(
+                                'Tasbeh 10talik',
+                                style: TextStyle(
+                                    fontSize: 16,
+                                    fontWeight: FontWeight.w700,
+                                    color: Colors.white),
+                              ),
+                            ],
+                          ))),
                 ),
               ],
             ),
-          ),
-        ],
+            const SizedBox(
+              height: 20,
+            ),
+            Row(
+              children: [
+                Expanded(
+                  child: Container(
+                      height: 250,
+                      decoration: BoxDecoration(
+                        color: Colors.green,
+                        borderRadius: BorderRadius.circular(22),
+                      ),
+                      child: CupertinoButton(
+                          onPressed: () {
+                            Navigator.pushNamed(context, Tasfile2.path);
+                          },
+                          child: Column(
+                            children: [
+                              Image.asset('assets/tasbeh_hand.png'),
+                              const SizedBox(
+                                height: 22,
+                              ),
+                              const Text(
+                                'Tasbeh 100talik',
+                                style: TextStyle(
+                                    fontSize: 16,
+                                    fontWeight: FontWeight.w700,
+                                    color: Colors.white),
+                              ),
+                            ],
+                          ))),
+                ),
+                const SizedBox(
+                  width: 20,
+                ),
+                Expanded(
+                  child: Container(
+                      height: 250,
+                      decoration: BoxDecoration(
+                        color: Colors.green,
+                        borderRadius: BorderRadius.circular(22),
+                      ),
+                      child: CupertinoButton(
+                          onPressed: () {
+                            Navigator.pushNamed(context, Tasfile4.path);
+                          },
+                          child: Column(
+                            children: [
+                              Image.asset('assets/tasbeh_hand.png'),
+                              const SizedBox(
+                                height: 22,
+                              ),
+                              const Text(
+                                'Zikrlar 100talik',
+                                style: TextStyle(
+                                    fontSize: 16,
+                                    fontWeight: FontWeight.w700,
+                                    color: Colors.white),
+                              ),
+                            ],
+                          ))),
+                ),
+              ],
+            ),
+            const SizedBox(
+              height: 20,
+            ),
+            Container(
+              padding: const EdgeInsets.symmetric(horizontal: 20),
+              height: 80,
+              width: double.infinity,
+              decoration: BoxDecoration(
+                borderRadius: BorderRadius.circular(22),
+                color: Colors.green,
+              ),
+              child: const Center(
+                  child: Text(
+                'Alhamdulillah 😊',
+                style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
+              )),
+            )
+          ],
+        ),
       ),
     );
   }

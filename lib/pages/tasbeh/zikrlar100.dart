@@ -1,19 +1,20 @@
 import 'package:flutter/material.dart';
-import 'package:my_tasbeh/provider/counter_provider.dart';
 import 'package:provider/provider.dart';
+import '../../provider/counter_provider.dart';
 
-class TasFile extends StatelessWidget {
-  static const path = 'tasbeh';
-  TasFile({Key? key}) : super(key: key);
+class Tasfile4 extends StatelessWidget {
+  static const path = '/zikrlar100';
+  const Tasfile4({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     final counter = Provider.of<CounterProvider>(context);
-    var count = counter.count;
-    var tap = counter.tap;
-    bool is33 = counter.is33;
+    var count4 = counter.count4;
+    var totalcount2 = counter.total2;
+
     var width = MediaQuery.of(context).size.width;
     var height = MediaQuery.of(context).size.height;
+
     return Scaffold(
       appBar: AppBar(
         backgroundColor: Colors.green.shade500,
@@ -40,12 +41,12 @@ class TasFile extends StatelessWidget {
               ),
               alignment: Alignment.center,
               height: height / 4,
-              width: width / 1.5,
+              width: width / 1.2,
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
                   Text(
-                    counter.zikr,
+                    counter.zikr1,
                     style: const TextStyle(
                       color: Colors.white,
                       fontSize: 23.0,
@@ -56,9 +57,20 @@ class TasFile extends StatelessWidget {
                     height: 20,
                   ),
                   Text(
-                    '${count == 0 ? 0 : count % (is33 ? 33 : 99) == 0 ? (is33 ? 33 : 99) : count % (is33 ? 33 : 99)}',
+                    "$count4",
                     style: const TextStyle(
                       fontSize: 45.0,
+                      color: Colors.white,
+                    ),
+                  ),
+                  const SizedBox(
+                    height: 10,
+                  ),
+                  Text(
+                    "Total count: $totalcount2",
+                    style: const TextStyle(
+                      fontSize: 20.0,
+                      fontWeight: FontWeight.w500,
                       color: Colors.white,
                     ),
                   ),
@@ -75,9 +87,7 @@ class TasFile extends StatelessWidget {
                       shape: const RoundedRectangleBorder(
                           borderRadius: BorderRadius.all(Radius.circular(30))),
                     ),
-                    onPressed: () {
-                      counter.increment33();
-                    },
+                    onPressed: () => counter.incrementzikr100(),
                     child: const Icon(
                       Icons.add,
                       size: 60,
@@ -97,7 +107,7 @@ class TasFile extends StatelessWidget {
                               borderRadius:
                                   BorderRadius.all(Radius.circular(16))),
                         ),
-                        onPressed: () => counter.refresh(),
+                        onPressed: () => counter.refresh3(),
                         child: const Icon(
                           Icons.refresh,
                           size: 30,
@@ -111,13 +121,10 @@ class TasFile extends StatelessWidget {
                                 borderRadius:
                                     BorderRadius.all(Radius.circular(16))),
                           ),
-                          onPressed: () {
-                            counter.change();
-                            counter.controllor();
-                          },
-                          child: Text(
-                            '$tap',
-                            style: const TextStyle(
+                          onPressed: () {},
+                          child: const Text(
+                            'Save',
+                            style: TextStyle(
                               color: Colors.white,
                               fontSize: 33,
                             ),
