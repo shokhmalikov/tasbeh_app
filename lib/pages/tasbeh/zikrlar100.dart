@@ -25,19 +25,19 @@ class Tasfile4 extends StatelessWidget {
         decoration: const BoxDecoration(
             image: DecorationImage(
                 image: AssetImage(
-                  'assets/pic.jpg',
+                  'assets/tasbih1.jpg',
                 ),
-                fit: BoxFit.fitHeight)),
+                fit: BoxFit.cover)),
         child: Column(
           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
           children: [
             Container(
               margin: const EdgeInsets.only(top: 10),
-              decoration: const BoxDecoration(
-                borderRadius: BorderRadius.all(
+              decoration: BoxDecoration(
+                borderRadius: const BorderRadius.all(
                   Radius.circular(30.0),
                 ),
-                color: Colors.green,
+                color: Colors.green.withOpacity(0.4),
               ),
               alignment: Alignment.center,
               height: height / 4,
@@ -83,7 +83,7 @@ class Tasfile4 extends StatelessWidget {
                 children: [
                   OutlinedButton(
                     style: OutlinedButton.styleFrom(
-                      backgroundColor: Colors.green,
+                      backgroundColor: Colors.green.withOpacity(0.4),
                       shape: const RoundedRectangleBorder(
                           borderRadius: BorderRadius.all(Radius.circular(30))),
                     ),
@@ -102,7 +102,7 @@ class Tasfile4 extends StatelessWidget {
                     children: [
                       OutlinedButton(
                         style: OutlinedButton.styleFrom(
-                          backgroundColor: Colors.green,
+                          backgroundColor: Colors.green.withOpacity(0.4),
                           shape: const RoundedRectangleBorder(
                               borderRadius:
                                   BorderRadius.all(Radius.circular(16))),
@@ -115,23 +115,8 @@ class Tasfile4 extends StatelessWidget {
                         ),
                       ),
                       OutlinedButton(
-                          style: OutlinedButton.styleFrom(
-                            backgroundColor: Colors.green,
-                            shape: const RoundedRectangleBorder(
-                                borderRadius:
-                                    BorderRadius.all(Radius.circular(16))),
-                          ),
-                          onPressed: () {},
-                          child: const Text(
-                            'Save',
-                            style: TextStyle(
-                              color: Colors.white,
-                              fontSize: 33,
-                            ),
-                          )),
-                      OutlinedButton(
                         style: OutlinedButton.styleFrom(
-                          backgroundColor: Colors.green,
+                          backgroundColor: Colors.green.withOpacity(0.4),
                           shape: const RoundedRectangleBorder(
                               borderRadius:
                                   BorderRadius.all(Radius.circular(16))),
